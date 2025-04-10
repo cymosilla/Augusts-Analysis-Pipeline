@@ -64,7 +64,7 @@ def evaluate_params(params, frames, use_gpu):
 def main():
     # --- Parameter Grid Setup ---
     # Ranges selected because the tags are small in a high-res frame.
-    min_marker_perimeter_rates = [0.01, 0.02]
+    min_marker_perimeter_rates = [0.01, 0.02, 0.03]
     adaptive_thresh_win_size_min_values = [3, 4, 5]
     adaptive_thresh_win_size_max_values = [29, 30, 31]
     adaptive_thresh_win_size_step_values = [1, 2, 3]
@@ -76,7 +76,7 @@ def main():
     
     # --- Load a subset of frames for grid search ---
     data_path = "/Users/bumblemini/Desktop/bumblebox-03_2025-04-07_16_50_36.mp4"
-    num_frames_to_test = 15
+    num_frames_to_test = 101
     #print(data_path[-1:-4])
     #print(data_path[-4:])
     #if data_path[-1:-4] == ".mp4":
@@ -113,7 +113,7 @@ def main():
     print(data_path[-4:])
     print("Starting parallel grid search over parameter combinations...")
     # Parallelize grid search over available CPU cores.
-    with concurrent.futures.ProcessPoolExecutor(max_workers=2) as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=4) as executor:
         futures = {executor.submit(evaluate_params, params, frames, use_gpu): params 
                    for params in param_combinations}
         for future in tqdm(concurrent.futures.as_completed(futures),
@@ -149,7 +149,7 @@ def main():
 
     # --- Create a video showing the tracking using the best parameters ---
     # Reopen the video for full processing.
-    if data_path[-1:-4] == ".mp4":
+    if data_path[-4:] == ".mp4":
         cap = cv2.VideoCapture(data_path)
         if not cap.isOpened():
             raise IOError("Cannot reopen video file: " + data_path)
@@ -164,7 +164,7 @@ def main():
 
     
     else:
-        img = cv2.imread(frames[0])
+        img = frames[0]
         frame_height, frame_width, _ = img.shape
         fps = 6
         fourcc = cv2.VideoWriter_fourcc(*'mp4v')

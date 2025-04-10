@@ -1,0 +1,9 @@
+Optimal ArUco Tracking Parameters:
+minMarkerPerimeterRate: 0.01
+adaptiveThreshWinSizeMin: 3
+adaptiveThreshWinSizeMax: 30
+adaptiveThreshWinSizeStep: 1
+polygonalApproxAccuracyRate: 0.08
+Average markers detected: 4.57
+Total time: 21.64s
+Average tracking time per frame: 0.2127 seconds
