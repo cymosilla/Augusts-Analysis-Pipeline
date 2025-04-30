@@ -146,8 +146,8 @@ def process_video(video_path):
     dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50)
     parameters = cv2.aruco.DetectorParameters()
     parameters.minMarkerPerimeterRate = 0.02
-    parameters.adaptiveThreshWinSizeMin = 5
-    parameters.adaptiveThreshWinSizeMax = 29
+    parameters.adaptiveThreshWinSizeMin = 3 # Old value: 5
+    parameters.adaptiveThreshWinSizeMax = 31 # Old value: 29
     parameters.adaptiveThreshWinSizeStep = 3
     parameters.polygonalApproxAccuracyRate = 0.08
 

@@ -5,5 +5,5 @@ adaptiveThreshWinSizeMax: 30
 adaptiveThreshWinSizeStep: 1
 polygonalApproxAccuracyRate: 0.08
 Average markers detected: 4.57
-Total time: 21.64s
-Average tracking time per frame: 0.2127 seconds
+Total time: 20.15s
+Average tracking time per frame: 0.2119 seconds
