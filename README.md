@@ -1,3 +1,16 @@
+Required items:
+1. BumbleBox
+2. HDMI to Micro HDMI cable
+3. MicroUSB power cable
+4. MicroSD card with the BumbleBox code written into it
+5. USB (preferrably empty)
+6. Keyboard
+7. Mouse
+
+Recording videos:
+1. Open Terminal
+2. 
+
 BumbleBox analysis pipeline:
 
 At this point, you should have completed collecting your data from the BumbleBoxes
