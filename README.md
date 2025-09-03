@@ -1,18 +1,3 @@
-Required items:
-1. BumbleBox
-2. HDMI to Micro HDMI cable
-3. MicroUSB power cable
-4. MicroSD card with the BumbleBox code written into it
-5. USB (preferrably empty)
-6. Keyboard
-7. Mouse
-
-Recording videos:
-1. Open Terminal
-2. 
-
-BumbleBox analysis pipeline:
-
 At this point, you should have completed collecting your data from the BumbleBoxes
 
 Assumptions for the following analysis:
@@ -50,6 +35,9 @@ need to have quotes around them when we type them in, so it should look like thi
 
 python3 track-tags-to-csv.0.11.py --volume /Volumes/'Samsung USB' --folder data --extension newtracks02.csv (you decide what extension you want or if you want one)
 
+## Output
+This analyzes videos in the Samsung USB folder under different dates & 
+
 5. That will track the tags and create csv files, next we need to interpolate that data. To do this, run the interpolate_dataset.0.2.py after setting the relevant variables at the top of the script. 
 
 python3 interpolate_dataset.0.2.py
@@ -60,6 +48,9 @@ python3 behavioral_metrics.py
 
 7. For each day, you might want to compute a composite nest image that removes bees. To do this, you should run generate_nest_image.py after setting all the relevant variables at the top of the script. You will need to run it for each day and then manually change the data_folder_path variable. The shuffle variable picks a random assortment of images from throughout the day, which is usually better, so I would recommend turning this to True. 
 
+
+
+## Outputs
 
 
 
